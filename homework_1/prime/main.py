@@ -3,7 +3,7 @@ def prime_count(number: int) -> int:
         return 0
 
     primes = [2]
-    for candidate in range(3, number):
+    for candidate in range(3, number, 2):
         for devider in primes:
             if candidate%devider==0:
                 break
@@ -15,6 +15,5 @@ def prime_count(number: int) -> int:
 
 if __name__ == '__main__':
     from custom_tests import test
-
     test(prime_count)
 
