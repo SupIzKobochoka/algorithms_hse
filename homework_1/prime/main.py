@@ -15,5 +15,6 @@ def prime_count(number: int) -> int:
 
 if __name__ == '__main__':
     from custom_tests import test
+    
     test(prime_count)
 
