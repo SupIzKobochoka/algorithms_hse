@@ -5,10 +5,8 @@ sys.setrecursionlimit(100_000_000)
 def _merge_sorted(arr: list,
                     arr1_left_index: int, arr1_right_index: int, 
                     arr2_left_index: int, arr2_right_index: int,
-                    is_single_element: bool = False) -> None:
-    # right_index не включительно: [) V [)
-    if is_single_element:
-        return     
+                ) -> None:
+    # right_index не включительно: [) V [)   
     new_index = []
 
     left_border = arr1_left_index

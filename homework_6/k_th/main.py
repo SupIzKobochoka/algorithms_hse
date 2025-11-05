@@ -17,7 +17,7 @@ def _partition(li: list, flag_left, flag_right):
             return _partition(li, flag_left=flag_left+1, flag_right=flag_right)
 
 
-def quicksearch(arr: list, k: int, index_left=None, index_right=None) -> list:
+def quickselect(arr: list, k: int, index_left=None, index_right=None) -> list:
     if len(arr) < k:
         raise IndexError('k > len(arr)')
 
@@ -33,13 +33,13 @@ def quicksearch(arr: list, k: int, index_left=None, index_right=None) -> list:
         return arr[k]
     
     if split_index > k:
-        return quicksearch(arr, k, index_left, split_index-1)
+        return quickselect(arr, k, index_left, split_index-1)
 
     else:
-        return quicksearch(arr, k, split_index+1, index_right)
+        return quickselect(arr, k, split_index+1, index_right)
     
 
 if __name__ == '__main__':
     from test import tests
 
-    tests(quicksearch)
+    tests(quickselect)
