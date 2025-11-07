@@ -13,7 +13,7 @@ def tests(makeheap1, makeheap2):
             return 2 * index + 1, 2 * index + 2
 
         def check_arr_heap(arr: list[list], index: int = 0, parent_key=float('-inf')):
-            assert parent_key is None or parent_key <= arr[index][0], f'got {parent_key=} and child_key={arr[index][0]}'
+            assert parent_key <= arr[index][0], f'got {parent_key=} and child_key={arr[index][0]}'
 
             child_left_index, child_right_index = get_children_index(index)
             if len(arr) > child_left_index:
